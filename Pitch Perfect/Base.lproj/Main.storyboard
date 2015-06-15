@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="JP7-hD-3Pc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -45,7 +44,6 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="94E-FP-kE5" secondAttribute="trailing" constant="134" id="1Zc-zF-3We"/>
                             <constraint firstAttribute="centerX" secondItem="94E-FP-kE5" secondAttribute="centerX" id="Bpp-Hr-Z9X"/>
                             <constraint firstItem="B7l-2e-3xt" firstAttribute="top" secondItem="tSC-Wm-PQ4" secondAttribute="bottom" constant="8" symbolic="YES" id="Eay-9c-jn9"/>
                             <constraint firstAttribute="centerX" secondItem="tSC-Wm-PQ4" secondAttribute="centerX" id="GvE-Li-iEj"/>
@@ -63,7 +61,6 @@
                                 <exclude reference="MYb-tA-R6R"/>
                                 <exclude reference="Eay-9c-jn9"/>
                                 <exclude reference="j4P-Yt-BWx"/>
-                                <exclude reference="1Zc-zF-3We"/>
                                 <exclude reference="Bpp-Hr-Z9X"/>
                                 <exclude reference="GvE-Li-iEj"/>
                                 <exclude reference="pVi-7S-2Og"/>
@@ -79,7 +76,6 @@
                                 <include reference="MYb-tA-R6R"/>
                                 <include reference="Eay-9c-jn9"/>
                                 <include reference="j4P-Yt-BWx"/>
-                                <include reference="1Zc-zF-3We"/>
                                 <include reference="Bpp-Hr-Z9X"/>
                                 <include reference="GvE-Li-iEj"/>
                                 <include reference="pVi-7S-2Og"/>
@@ -158,18 +154,18 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="ldd-WA-RZc" secondAttribute="trailing" constant="45" id="0Ry-eh-meM"/>
-                            <constraint firstItem="ldd-WA-RZc" firstAttribute="top" secondItem="vkS-mk-we2" secondAttribute="bottom" constant="45" id="1fl-se-Hr2"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ldd-WA-RZc" secondAttribute="trailing" constant="40" id="0Ry-eh-meM"/>
+                            <constraint firstItem="ldd-WA-RZc" firstAttribute="top" secondItem="vkS-mk-we2" secondAttribute="bottom" constant="40" id="1fl-se-Hr2"/>
                             <constraint firstItem="ldd-WA-RZc" firstAttribute="top" secondItem="w2g-5c-olQ" secondAttribute="top" id="5Q4-pp-por"/>
-                            <constraint firstItem="w2g-5c-olQ" firstAttribute="leading" secondItem="mZP-It-rTI" secondAttribute="leadingMargin" constant="45" id="7Zn-XF-Jye"/>
+                            <constraint firstItem="w2g-5c-olQ" firstAttribute="leading" secondItem="mZP-It-rTI" secondAttribute="leadingMargin" constant="40" id="7Zn-XF-Jye"/>
                             <constraint firstItem="fBK-Ox-09e" firstAttribute="top" secondItem="Vof-Lc-zyR" secondAttribute="bottom" constant="33" id="9Gc-Wc-q8M"/>
-                            <constraint firstItem="Adc-PM-klf" firstAttribute="leading" secondItem="mZP-It-rTI" secondAttribute="leadingMargin" constant="45" id="Clc-Eg-g5t"/>
+                            <constraint firstItem="Adc-PM-klf" firstAttribute="leading" secondItem="mZP-It-rTI" secondAttribute="leadingMargin" constant="40" id="Clc-Eg-g5t"/>
                             <constraint firstItem="ldd-WA-RZc" firstAttribute="leading" secondItem="vkS-mk-we2" secondAttribute="leading" id="M5q-gy-WdO"/>
                             <constraint firstAttribute="centerX" secondItem="Vof-Lc-zyR" secondAttribute="centerX" id="WH7-z7-hfj"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="vkS-mk-we2" secondAttribute="trailing" constant="45" id="ZP5-OY-Bbk" userLabel="Horizontal Space - (88) - View - Button"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vkS-mk-we2" secondAttribute="trailing" constant="40" id="ZP5-OY-Bbk" userLabel="Horizontal Space - (88) - View - Button"/>
                             <constraint firstItem="Adc-PM-klf" firstAttribute="top" secondItem="2QF-c6-t0N" secondAttribute="bottom" constant="40" id="b3U-a9-xxh"/>
                             <constraint firstItem="w2g-5c-olQ" firstAttribute="top" secondItem="Adc-PM-klf" secondAttribute="bottom" constant="75" id="mGO-QD-j8h">
-                                <variation key="widthClass=compact" constant="45"/>
+                                <variation key="widthClass=compact" constant="40"/>
                             </constraint>
                             <constraint firstItem="vkS-mk-we2" firstAttribute="top" secondItem="2QF-c6-t0N" secondAttribute="bottom" constant="40" id="xDC-86-oaA"/>
                         </constraints>

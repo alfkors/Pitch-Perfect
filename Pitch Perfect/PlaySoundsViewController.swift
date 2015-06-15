@@ -47,6 +47,9 @@ class PlaySoundsViewController: UIViewController {
 
     @IBAction func stopAudio(sender: UIButton) {
         audioPlayer.stop()
+        audioPlayer.currentTime = 0
+        audioEngine.stop()
+        audioEngine.reset()
     }
     
     @IBAction func playFastAudio(sender: UIButton) {
