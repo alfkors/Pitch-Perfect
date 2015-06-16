@@ -40,6 +40,12 @@
                                     <action selector="stopAudio:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="aH2-wE-fxh"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to Record" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yZv-Tb-Uel">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -47,7 +53,9 @@
                             <constraint firstItem="B7l-2e-3xt" firstAttribute="top" secondItem="tSC-Wm-PQ4" secondAttribute="bottom" constant="8" symbolic="YES" id="Eay-9c-jn9"/>
                             <constraint firstAttribute="centerX" secondItem="tSC-Wm-PQ4" secondAttribute="centerX" id="GvE-Li-iEj"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="94E-FP-kE5" secondAttribute="bottom" constant="20" id="HAe-2M-2fo"/>
+                            <constraint firstItem="yZv-Tb-Uel" firstAttribute="top" secondItem="B7l-2e-3xt" secondAttribute="top" id="HWk-iJ-egT"/>
                             <constraint firstAttribute="centerX" secondItem="B7l-2e-3xt" secondAttribute="centerX" id="j4P-Yt-BWx"/>
+                            <constraint firstAttribute="centerX" secondItem="yZv-Tb-Uel" secondAttribute="centerX" id="lnb-9y-Rtz"/>
                             <constraint firstAttribute="centerY" secondItem="tSC-Wm-PQ4" secondAttribute="centerY" id="pVi-7S-2Og"/>
                         </constraints>
                         <variation key="default">
@@ -55,14 +63,17 @@
                                 <exclude reference="tSC-Wm-PQ4"/>
                                 <exclude reference="B7l-2e-3xt"/>
                                 <exclude reference="94E-FP-kE5"/>
+                                <exclude reference="yZv-Tb-Uel"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="HAe-2M-2fo"/>
+                                <exclude reference="GvE-Li-iEj"/>
+                                <exclude reference="pVi-7S-2Og"/>
+                                <exclude reference="HWk-iJ-egT"/>
+                                <exclude reference="lnb-9y-Rtz"/>
                                 <exclude reference="Eay-9c-jn9"/>
                                 <exclude reference="j4P-Yt-BWx"/>
                                 <exclude reference="Bpp-Hr-Z9X"/>
-                                <exclude reference="GvE-Li-iEj"/>
-                                <exclude reference="pVi-7S-2Og"/>
+                                <exclude reference="HAe-2M-2fo"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -70,14 +81,17 @@
                                 <include reference="tSC-Wm-PQ4"/>
                                 <include reference="B7l-2e-3xt"/>
                                 <include reference="94E-FP-kE5"/>
+                                <include reference="yZv-Tb-Uel"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="HAe-2M-2fo"/>
+                                <include reference="GvE-Li-iEj"/>
+                                <include reference="pVi-7S-2Og"/>
+                                <include reference="HWk-iJ-egT"/>
+                                <include reference="lnb-9y-Rtz"/>
                                 <include reference="Eay-9c-jn9"/>
                                 <include reference="j4P-Yt-BWx"/>
                                 <include reference="Bpp-Hr-Z9X"/>
-                                <include reference="GvE-Li-iEj"/>
-                                <include reference="pVi-7S-2Og"/>
+                                <include reference="HAe-2M-2fo"/>
                             </mask>
                         </variation>
                     </view>
@@ -86,6 +100,7 @@
                         <outlet property="recordButton" destination="tSC-Wm-PQ4" id="M2P-v5-kqh"/>
                         <outlet property="recording" destination="B7l-2e-3xt" id="JZC-eu-CrN"/>
                         <outlet property="stopButton" destination="94E-FP-kE5" id="YHb-7e-t4x"/>
+                        <outlet property="tapToRecord" destination="yZv-Tb-Uel" id="u2g-lv-5mL"/>
                         <segue destination="RYq-51-t9e" kind="show" identifier="stopRecording" id="aC8-64-HeP"/>
                     </connections>
                 </viewController>
@@ -179,16 +194,16 @@
                                 <exclude reference="ldd-WA-RZc"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="9Gc-Wc-q8M"/>
                                 <exclude reference="b3U-a9-xxh"/>
-                                <exclude reference="fe9-ow-D91"/>
-                                <exclude reference="xDC-86-oaA"/>
-                                <exclude reference="mGO-QD-j8h"/>
-                                <exclude reference="1fl-se-Hr2"/>
-                                <exclude reference="d57-mY-MDD"/>
                                 <exclude reference="N20-4S-wat"/>
                                 <exclude reference="TmR-XS-39D"/>
                                 <exclude reference="WH7-z7-hfj"/>
-                                <exclude reference="9Gc-Wc-q8M"/>
+                                <exclude reference="1fl-se-Hr2"/>
+                                <exclude reference="d57-mY-MDD"/>
+                                <exclude reference="fe9-ow-D91"/>
+                                <exclude reference="xDC-86-oaA"/>
+                                <exclude reference="mGO-QD-j8h"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -200,16 +215,16 @@
                                 <include reference="ldd-WA-RZc"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="9Gc-Wc-q8M"/>
                                 <include reference="b3U-a9-xxh"/>
-                                <include reference="fe9-ow-D91"/>
-                                <include reference="xDC-86-oaA"/>
-                                <include reference="mGO-QD-j8h"/>
-                                <include reference="1fl-se-Hr2"/>
-                                <include reference="d57-mY-MDD"/>
                                 <include reference="N20-4S-wat"/>
                                 <include reference="TmR-XS-39D"/>
                                 <include reference="WH7-z7-hfj"/>
-                                <include reference="9Gc-Wc-q8M"/>
+                                <include reference="1fl-se-Hr2"/>
+                                <include reference="d57-mY-MDD"/>
+                                <include reference="fe9-ow-D91"/>
+                                <include reference="xDC-86-oaA"/>
+                                <include reference="mGO-QD-j8h"/>
                             </mask>
                         </variation>
                     </view>

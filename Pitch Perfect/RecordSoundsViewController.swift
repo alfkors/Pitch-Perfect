@@ -15,6 +15,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     @IBOutlet weak var recordButton: UIButton!
     @IBOutlet weak var stopButton: UIButton!
     @IBOutlet weak var recording: UILabel!
+    @IBOutlet weak var tapToRecord: UILabel!
     
     var audioRecorder:AVAudioRecorder!
     var recordedAudio:RecordedAudio!
@@ -32,6 +33,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
 
     override func viewWillAppear(animated: Bool) {
         stopButton.hidden = true
+        tapToRecord.hidden = false
         //recordButton.enabled = true
     }
     
@@ -40,6 +42,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         stopButton.hidden = false
         println("in recordButton")
         recording.hidden = false
+        tapToRecord.hidden = true
         
         //Inside func recordAudio(sender: UIButton)
         let dirPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as! String
