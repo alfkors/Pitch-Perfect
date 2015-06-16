@@ -120,7 +120,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="playSlowButton:" destination="RYq-51-t9e" eventType="touchUpInside" id="mnL-5P-94W"/>
+                                    <action selector="playSlowAudio:" destination="RYq-51-t9e" eventType="touchUpInside" id="RKD-Gq-0Se"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vkS-mk-we2">
