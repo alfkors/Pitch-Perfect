@@ -57,12 +57,12 @@
                                 <exclude reference="94E-FP-kE5"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="GvE-Li-iEj"/>
-                                <exclude reference="pVi-7S-2Og"/>
+                                <exclude reference="HAe-2M-2fo"/>
                                 <exclude reference="Eay-9c-jn9"/>
                                 <exclude reference="j4P-Yt-BWx"/>
                                 <exclude reference="Bpp-Hr-Z9X"/>
-                                <exclude reference="HAe-2M-2fo"/>
+                                <exclude reference="GvE-Li-iEj"/>
+                                <exclude reference="pVi-7S-2Og"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -72,12 +72,12 @@
                                 <include reference="94E-FP-kE5"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="GvE-Li-iEj"/>
-                                <include reference="pVi-7S-2Og"/>
+                                <include reference="HAe-2M-2fo"/>
                                 <include reference="Eay-9c-jn9"/>
                                 <include reference="j4P-Yt-BWx"/>
                                 <include reference="Bpp-Hr-Z9X"/>
-                                <include reference="HAe-2M-2fo"/>
+                                <include reference="GvE-Li-iEj"/>
+                                <include reference="pVi-7S-2Og"/>
                             </mask>
                         </variation>
                     </view>
