@@ -17,16 +17,6 @@ class PlaySoundsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-//        if var filePath = NSBundle.mainBundle().pathForResource("movie_quote", ofType:"mp3")
-//        {
-//            var filePathURL = NSURL.fileURLWithPath(filePath)
-//            println("In snail playing movie_quote.mp3")
-//        } else {
-//            println("The file is empty")
-//        }
-
         audioPlayer = AVAudioPlayer(contentsOfURL: receivedAudio.filePathUrl, error: nil)
         audioPlayer.enableRate = true
         audioEngine = AVAudioEngine()
@@ -36,7 +26,6 @@ class PlaySoundsViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     @IBAction func playSlowAudio(sender: UIButton) {
