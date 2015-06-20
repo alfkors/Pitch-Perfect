@@ -51,6 +51,46 @@ class PlaySoundsViewController: UIViewController {
         playAudioWithVariablePitch(-1000)
     }
     
+    @IBAction func playEchoAudio(sender: UIButton) {
+        audioPlayer.stop()
+        audioEngine.stop()
+        audioEngine.reset()
+        
+        var audioPlayerNode = AVAudioPlayerNode()
+        audioEngine.attachNode(audioPlayerNode)
+        
+        var echoEffect = AVAudioUnitDelay()
+        audioEngine.attachNode(echoEffect)
+        
+        
+        audioEngine.connect(audioPlayerNode, to: echoEffect, format:nil)
+        
+        audioEngine.connect(echoEffect, to: audioEngine.outputNode, format:nil)
+        audioPlayerNode.scheduleFile(audioFile, atTime: nil, completionHandler: nil)
+        audioEngine.startAndReturnError(nil)
+        audioPlayerNode.play()
+    }
+    
+    @IBAction func playReverbAudio(sender: UIButton) {
+        audioPlayer.stop()
+        audioEngine.stop()
+        audioEngine.reset()
+        
+        var audioPlayerNode = AVAudioPlayerNode()
+        audioEngine.attachNode(audioPlayerNode)
+        
+        var reverbEffect = AVAudioUnitReverb()
+        audioEngine.attachNode(reverbEffect)
+        
+        
+        audioEngine.connect(audioPlayerNode, to: reverbEffect, format:nil)
+        
+        audioEngine.connect(reverbEffect, to: audioEngine.outputNode, format:nil)
+        audioPlayerNode.scheduleFile(audioFile, atTime: nil, completionHandler: nil)
+        audioEngine.startAndReturnError(nil)
+        audioPlayerNode.play()
+    }
+    
     func playAudioWithVariableRate(rate:Float){
         audioPlayer.stop()
         audioEngine.stop()
@@ -78,8 +118,6 @@ class PlaySoundsViewController: UIViewController {
         audioPlayerNode.scheduleFile(audioFile, atTime: nil, completionHandler: nil)
         audioEngine.startAndReturnError(nil)
         audioPlayerNode.play()
-        
-
     }
     /*
     // MARK: - Navigation
