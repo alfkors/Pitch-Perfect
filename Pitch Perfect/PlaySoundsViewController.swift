@@ -52,40 +52,25 @@ class PlaySoundsViewController: UIViewController {
     }
     
     @IBAction func playEchoAudio(sender: UIButton) {
-        audioPlayer.stop()
-        audioEngine.stop()
-        audioEngine.reset()
-        
-        var audioPlayerNode = AVAudioPlayerNode()
-        audioEngine.attachNode(audioPlayerNode)
-        
         var echoEffect = AVAudioUnitDelay()
-        audioEngine.attachNode(echoEffect)
-        
-        
-        audioEngine.connect(audioPlayerNode, to: echoEffect, format:nil)
-        
-        audioEngine.connect(echoEffect, to: audioEngine.outputNode, format:nil)
-        audioPlayerNode.scheduleFile(audioFile, atTime: nil, completionHandler: nil)
-        audioEngine.startAndReturnError(nil)
-        audioPlayerNode.play()
+        playEffectsAudio(echoEffect)
     }
     
     @IBAction func playReverbAudio(sender: UIButton) {
+        var reverbEffect = AVAudioUnitReverb()
+        playEffectsAudio(reverbEffect)
+    }
+    
+    func playEffectsAudio(effect:AVAudioUnitEffect){
         audioPlayer.stop()
         audioEngine.stop()
         audioEngine.reset()
         
         var audioPlayerNode = AVAudioPlayerNode()
         audioEngine.attachNode(audioPlayerNode)
-        
-        var reverbEffect = AVAudioUnitReverb()
-        audioEngine.attachNode(reverbEffect)
-        
-        
-        audioEngine.connect(audioPlayerNode, to: reverbEffect, format:nil)
-        
-        audioEngine.connect(reverbEffect, to: audioEngine.outputNode, format:nil)
+        audioEngine.attachNode(effect)
+        audioEngine.connect(audioPlayerNode, to: effect, format:nil)
+        audioEngine.connect(effect, to: audioEngine.outputNode, format:nil)
         audioPlayerNode.scheduleFile(audioFile, atTime: nil, completionHandler: nil)
         audioEngine.startAndReturnError(nil)
         audioPlayerNode.play()
