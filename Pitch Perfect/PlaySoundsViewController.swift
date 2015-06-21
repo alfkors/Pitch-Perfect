@@ -58,6 +58,8 @@ class PlaySoundsViewController: UIViewController {
     
     @IBAction func playReverbAudio(sender: UIButton) {
         var reverbEffect = AVAudioUnitReverb()
+        reverbEffect.loadFactoryPreset(AVAudioUnitReverbPreset.Cathedral)
+        reverbEffect.wetDryMix = 30.0
         playEffectsAudio(reverbEffect)
     }
     
