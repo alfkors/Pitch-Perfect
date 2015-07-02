@@ -62,21 +62,21 @@ class PlaySoundsViewController: UIViewController {
     }
     
     // Play fast and slow
-    func playAudioWithVariableRate(rate:Float){
+    func playAudioWithVariableRate(rate: Float){
         stopAllAudio()
         audioPlayer.rate = rate
         audioPlayer.play()
     }
     
     // Chipmunk and Darth Vader
-    func playAudioWithVariablePitch(pitch:Float){
+    func playAudioWithVariablePitch(pitch: Float){
         var changePitchEffect = AVAudioUnitTimePitch()
         changePitchEffect.pitch = pitch
         playEffectsAudio(changePitchEffect)
     }
     
     // Play Echo, Reverb and Pitch effects
-    func playEffectsAudio(effect:AVAudioUnit){
+    func playEffectsAudio(effect: AVAudioUnit){
         stopAllAudio()
         
         var audioPlayerNode = AVAudioPlayerNode()
@@ -95,15 +95,4 @@ class PlaySoundsViewController: UIViewController {
         audioEngine.stop()
         audioEngine.reset()
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
