@@ -17,6 +17,7 @@ class PlaySoundsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Initialize AVAudioPlayer and AVAudioEngine objects with data from RecordSoundsViewController
         audioPlayer = AVAudioPlayer(contentsOfURL: receivedAudio.filePathUrl, error: nil)
         audioPlayer.enableRate = true
         audioEngine = AVAudioEngine()
@@ -60,10 +61,23 @@ class PlaySoundsViewController: UIViewController {
         playEffectsAudio(reverbEffect)
     }
     
-    func playEffectsAudio(effect:AVAudioUnitEffect){
-        audioPlayer.stop()
-        audioEngine.stop()
-        audioEngine.reset()
+    // Play fast and slow
+    func playAudioWithVariableRate(rate:Float){
+        stopAllAudio()
+        audioPlayer.rate = rate
+        audioPlayer.play()
+    }
+    
+    // Chipmunk and Darth Vader
+    func playAudioWithVariablePitch(pitch:Float){
+        var changePitchEffect = AVAudioUnitTimePitch()
+        changePitchEffect.pitch = pitch
+        playEffectsAudio(changePitchEffect)
+    }
+    
+    // Play Echo, Reverb and Pitch effects
+    func playEffectsAudio(effect:AVAudioUnit){
+        stopAllAudio()
         
         var audioPlayerNode = AVAudioPlayerNode()
         audioEngine.attachNode(audioPlayerNode)
@@ -75,39 +89,13 @@ class PlaySoundsViewController: UIViewController {
         audioPlayerNode.play()
     }
     
-    func playAudioWithVariableRate(rate:Float){
-        stopAllAudio()
-        audioPlayer.rate = rate
-        audioPlayer.play()
-    }
-    
-    func playAudioWithVariablePitch(pitch:Float){
-        audioPlayer.stop()
-        audioEngine.stop()
-        audioEngine.reset()
-        
-        var audioPlayerNode = AVAudioPlayerNode()
-        audioEngine.attachNode(audioPlayerNode)
-        
-        var changePitchEffect = AVAudioUnitTimePitch()
-        changePitchEffect.pitch = pitch
-        audioEngine.attachNode(changePitchEffect)
-        
-        
-        audioEngine.connect(audioPlayerNode, to: changePitchEffect, format:nil)
-        
-        audioEngine.connect(changePitchEffect, to: audioEngine.outputNode, format:nil)
-        audioPlayerNode.scheduleFile(audioFile, atTime: nil, completionHandler: nil)
-        audioEngine.startAndReturnError(nil)
-        audioPlayerNode.play()
-    }
-    
     func stopAllAudio(){
         audioPlayer.stop()
         audioPlayer.currentTime = 0
         audioEngine.stop()
         audioEngine.reset()
     }
+    
     /*
     // MARK: - Navigation
 
