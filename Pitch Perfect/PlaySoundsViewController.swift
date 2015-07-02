@@ -28,15 +28,12 @@ class PlaySoundsViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
+    @IBAction func stopAudio(sender: UIButton) {
+        stopAllAudio()
+    }
+    
     @IBAction func playSlowAudio(sender: UIButton) {
         playAudioWithVariableRate(0.5)
-    }
-
-    @IBAction func stopAudio(sender: UIButton) {
-        audioPlayer.stop()
-        audioPlayer.currentTime = 0
-        audioEngine.stop()
-        audioEngine.reset()
     }
     
     @IBAction func playFastAudio(sender: UIButton) {
@@ -79,9 +76,7 @@ class PlaySoundsViewController: UIViewController {
     }
     
     func playAudioWithVariableRate(rate:Float){
-        audioPlayer.stop()
-        audioEngine.stop()
-        audioEngine.reset()
+        stopAllAudio()
         audioPlayer.rate = rate
         audioPlayer.play()
     }
@@ -105,6 +100,13 @@ class PlaySoundsViewController: UIViewController {
         audioPlayerNode.scheduleFile(audioFile, atTime: nil, completionHandler: nil)
         audioEngine.startAndReturnError(nil)
         audioPlayerNode.play()
+    }
+    
+    func stopAllAudio(){
+        audioPlayer.stop()
+        audioPlayer.currentTime = 0
+        audioEngine.stop()
+        audioEngine.reset()
     }
     /*
     // MARK: - Navigation
